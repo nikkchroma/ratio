@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ra:tio — Specialty coffee bar in Alwarpet, Chennai. Precision-brewed coffee, minimal space, maximum craft." />
+  <title>ra:tio — Specialty Coffee Bar, Alwarpet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-label"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-bar"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <canvas id="pre-canvas" aria-hidden="true"></canvas>
+    <div class="pre-content">
+      <div class="pre-logo-wrap">
+        <span class="pre-logo" id="preLogoText">ra:tio</span>
+        <span class="pre-logo-ghost" aria-hidden="true">ra:tio</span>
+      </div>
+      <div class="pre-bar-wrap">
+        <div class="pre-bar" id="preBar"></div>
+      </div>
+      <div class="pre-pct" id="prePct">0%</div>
+    </div>
+  </div>
+
+  <!-- NOISE -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header id="header">
+    <nav class="nav container">
+      <a href="#" class="logo" data-magnetic>
+        <span class="logo-main">ra:tio</span>
+        <span class="logo-loc">Alwarpet · Chennai</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#craft" class="nl" data-magnetic>Craft</a></li>
+        <li><a href="#menu" class="nl" data-magnetic>Menu</a></li>
+        <li><a href="#space" class="nl" data-magnetic>Space</a></li>
+        <li><a href="#find-us" class="nl" data-magnetic>Visit</a></li>
+      </ul>
+      <a href="https://www.instagram.com/at.ratio/" target="_blank" rel="noopener" class="nav-ig" data-magnetic>@at.ratio ↗</a>
+      <button class="burger" id="burger" aria-label="Toggle menu" data-magnetic>
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- DRAWER -->
+  <div class="drawer" id="drawer">
+    <nav class="drawer-nav">
+      <a href="#craft" class="drawer-link">Craft</a>
+      <a href="#menu" class="drawer-link">Menu</a>
+      <a href="#space" class="drawer-link">Space</a>
+      <a href="#find-us" class="drawer-link">Visit</a>
+      <a href="https://www.instagram.com/at.ratio/" target="_blank" rel="noopener" class="drawer-link drawer-ig">@at.ratio ↗</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas id="steam-canvas" aria-hidden="true"></canvas>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <div class="hero-grid container">
+      <div class="hero-left">
+        <p class="hero-tag">
+          <span class="tag-dash"></span>
+          <span class="tag-txt">Specialty Coffee Bar · Alwarpet</span>
+        </p>
+        <h1 class="hero-title">
+          <span class="hl"><span class="hw reveal-clip">Every</span></span>
+          <span class="hl"><span class="hw reveal-clip">variable.</span></span>
+          <span class="hl"><span class="hw reveal-clip accent">Controlled.</span></span>
+        </h1>
+        <p class="hero-desc reveal-fade">
+          Precision-brewed specialty coffee in the heart of Alwarpet. No guesswork. No shortcuts. Just the perfect cup, every time.
+        </p>
+        <div class="hero-btns reveal-fade">
+          <a href="#menu" class="btn-primary" data-magnetic>
+            <span>View Menu</span><span class="btn-arr">→</span>
+          </a>
+          <a href="#find-us" class="btn-outline" data-magnetic>Find Us</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card" id="heroCard" data-tilt>
+          <div class="hc-grid-lines" aria-hidden="true"></div>
+          <div class="hc-glow" aria-hidden="true"></div>
+          <div class="card-eyebrow">Live Espresso Ratio</div>
+          <div class="card-ratio" id="cardRatio">1<span class="cr-colon">:</span>2</div>
+          <div class="card-bar-wrap">
+            <div class="card-bar" id="cardBar"></div>
+          </div>
+          <div class="card-params">
+            <div class="cp"><span class="cp-k">Dose</span><span class="cp-v" id="cpDose">18g</span></div>
+            <div class="cp"><span class="cp-k">Yield</span><span class="cp-v" id="cpYield">36g</span></div>
+            <div class="cp"><span class="cp-k">Time</span><span class="cp-v" id="cpTime">28s</span></div>
+          </div>
+          <div class="card-sep"></div>
+          <div class="card-tags">
+            <span>Single Origin</span>
+            <span>Direct Trade</span>
+            <span>Light Roast</span>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-cell">
+            <div class="sc-num scramble" data-target="4.7">0.0</div>
+            <div class="sc-lbl">Rating</div>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-cell">
+            <div class="sc-num">11<small>PM</small></div>
+            <div class="sc-lbl">Closes</div>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-cell">
+            <div class="sc-num">7<small>AM</small></div>
+            <div class="sc-lbl">Opens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-label="Scroll">
+      <div class="sh-track"><div class="sh-thumb"></div></div>
+      <span class="sh-lbl">scroll</span>
+    </div>
+  </section>
+
+  <!-- KINETIC STRIP -->
+  <div class="k-strip" aria-hidden="true">
+    <div class="k-row k-fwd">
+      <div class="k-inner">
+        <span>ra:tio</span><b>—</b><span>specialty coffee</span><b>—</b><span>alwarpet</span><b>—</b><span>single origin</span><b>—</b><span>direct trade</span><b>—</b><span>precision brewing</span><b>—</b>
+        <span>ra:tio</span><b>—</b><span>specialty coffee</span><b>—</b><span>alwarpet</span><b>—</b><span>single origin</span><b>—</b><span>direct trade</span><b>—</b><span>precision brewing</span><b>—</b>
+      </div>
+    </div>
+    <div class="k-row k-rev">
+      <div class="k-inner">
+        <span>espresso</span><b>·</b><span>pour over</span><b>·</b><span>cold brew</span><b>·</b><span>aeropress</span><b>·</b><span>nitro</span><b>·</b><span>chemex</span><b>·</b>
+        <span>espresso</span><b>·</b><span>pour over</span><b>·</b><span>cold brew</span><b>·</b><span>aeropress</span><b>·</b><span>nitro</span><b>·</b><span>chemex</span><b>·</b>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRAFT -->
+  <section class="craft" id="craft">
+    <div class="container">
+      <div class="craft-hd">
+        <div class="sec-n">01 / 04</div>
+        <div class="sec-hd-r">
+          <h2 class="sec-title" data-split>The craft behind every cup</h2>
+          <p class="sec-sub" data-reveal>We obsess over variables so you can just enjoy the result.</p>
+        </div>
+      </div>
+      <div class="craft-grid">
+        <div class="craft-card" data-card>
+          <div class="cc-glow"></div>
+          <div class="cc-n">01</div>
+          <h3 class="cc-h">Source</h3>
+          <p class="cc-p">We work directly with farmers and cooperative estates — tracking every bean back to its origin, elevation, and harvest season.</p>
+          <span class="cc-arr">→</span>
+        </div>
+        <div class="craft-card" data-card>
+          <div class="cc-glow"></div>
+          <div class="cc-n">02</div>
+          <h3 class="cc-h">Roast</h3>
+          <p class="cc-p">Careful, light-to-medium profiles that honour the origin character. Nothing masked by dark roast. Everything intentional.</p>
+          <span class="cc-arr">→</span>
+        </div>
+        <div class="craft-card" data-card>
+          <div class="cc-glow"></div>
+          <div class="cc-n">03</div>
+          <h3 class="cc-h">Brew</h3>
+          <p class="cc-p">Dialled-in espresso ratios, pour-over precision, and cold brew patience. Every method, dialled to the gram and the second.</p>
+          <span class="cc-arr">→</span>
+        </div>
+        <div class="craft-card" data-card>
+          <div class="cc-glow"></div>
+          <div class="cc-n">04</div>
+          <h3 class="cc-h">Serve</h3>
+          <p class="cc-p">Served immediately, no exceptions. Because a perfect extraction is only perfect for about 30 seconds.</p>
+          <span class="cc-arr">→</span>
+        </div>
+      </div>
+    </div>
+    <div class="bg-word" data-parallax="0.4" aria-hidden="true">CRAFT</div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-sec">
+    <div class="container">
+      <blockquote class="big-quote">
+        <div class="bq-line" data-reveal>"Great coffee isn't</div>
+        <div class="bq-line bq-accent" data-reveal>an accident."</div>
+        <div class="bq-attr" data-reveal>— The barista who dialled it in at 6:58 AM</div>
+      </blockquote>
+    </div>
+    <div class="q-orb" aria-hidden="true"></div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-sec" id="menu">
+    <div class="container">
+      <div class="menu-hd">
+        <div class="sec-n">02 / 04</div>
+        <div class="sec-hd-r">
+          <h2 class="sec-title" data-split>What we pull</h2>
+          <p class="sec-sub" data-reveal>Our bar. Our rules. All specialty-grade.</p>
+        </div>
+        <div class="tab-wrap">
+          <button class="mtab active" data-cat="espresso" data-magnetic>Espresso</button>
+          <button class="mtab" data-cat="filter" data-magnetic>Filter</button>
+          <button class="mtab" data-cat="cold" data-magnetic>Cold</button>
+          <button class="mtab" data-cat="food" data-magnetic>Food</button>
+        </div>
+      </div>
+      <div class="menu-grid" id="menuGrid"></div>
+    </div>
+    <div class="bg-word" data-parallax="0.3" aria-hidden="true">MENU</div>
+  </section>
+
+  <!-- SPACE -->
+  <section class="space-sec" id="space">
+    <div class="container">
+      <div class="sec-n">03 / 04</div>
+      <div class="space-inner">
+        <div class="space-txt">
+          <h2 class="sec-title" data-split>The bar.<br />The space.</h2>
+          <p class="sp-body" data-reveal>A stripped-back interior designed around the coffee — not the other way around. Clean lines, good acoustics, natural light, and the steady sound of a grinder doing its job.</p>
+          <p class="sp-body" data-reveal>Located in Cooperative Colony, Sri Ram Nagar — a quiet pocket of Alwarpet where you can actually hear yourself think.</p>
+          <ul class="sp-list">
+            <li data-reveal><span class="sp-dot"></span>Bar seating &amp; community table</li>
+            <li data-reveal><span class="sp-dot"></span>Work-friendly with strong WiFi</li>
+            <li data-reveal><span class="sp-dot"></span>Private event space available</li>
+            <li data-reveal><span class="sp-dot"></span>Minimal — no distractions</li>
+          </ul>
+        </div>
+        <div class="space-mosaic">
+          <div class="m-card m-large" data-tilt>
+            <div class="mc-lbl">The Bar</div>
+            <div class="mc-ico">☕</div>
+            <div class="mc-reveal">Where it all happens</div>
+            <div class="mc-shine"></div>
+          </div>
+          <div class="m-card" data-tilt>
+            <div class="mc-lbl">Seating</div>
+            <div class="mc-ico">🪑</div>
+            <div class="mc-shine"></div>
+          </div>
+          <div class="m-card" data-tilt>
+            <div class="mc-lbl">Ambiance</div>
+            <div class="mc-ico">💡</div>
+            <div class="mc-shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="sb-grid">
+        <div class="sb-block" data-reveal>
+          <div class="sb-num" data-count="4.7" data-dec="1">0</div>
+          <div class="sb-lbl">Justdial Rating</div>
+        </div>
+        <div class="sb-block" data-reveal>
+          <div class="sb-num" data-count="100" data-sfx="%">0</div>
+          <div class="sb-lbl">Specialty Grade</div>
+        </div>
+        <div class="sb-block" data-reveal>
+          <div class="sb-num" data-count="16" data-sfx="hrs">0</div>
+          <div class="sb-lbl">Open Daily</div>
+        </div>
+        <div class="sb-block" data-reveal>
+          <div class="sb-num" data-count="1" data-sfx=":2">0</div>
+          <div class="sb-lbl">Perfect Ratio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIND US -->
+  <section class="find-sec" id="find-us">
+    <div class="container">
+      <div class="sec-n">04 / 04</div>
+      <div class="find-grid">
+        <div class="find-l">
+          <h2 class="sec-title" data-split>Come in.<br />Pull up a stool.</h2>
+          <div class="find-rows">
+            <div class="fr" data-reveal>
+              <span class="fr-ico">📍</span>
+              <div>
+                <strong>Where</strong>
+                <p>No 38/1, Cooperative Colony<br />Sri Ram Nagar, Alwarpet<br />Chennai — 600018</p>
+              </div>
+            </div>
+            <div class="fr" data-reveal>
+              <span class="fr-ico">🕐</span>
+              <div>
+                <strong>When</strong>
+                <p>Monday – Sunday<br />7:00 AM – 11:00 PM</p>
+              </div>
+            </div>
+            <div class="fr" data-reveal>
+              <span class="fr-ico">📲</span>
+              <div>
+                <strong>Follow</strong>
+                <p><a href="https://www.instagram.com/at.ratio/" target="_blank" rel="noopener">@at.ratio on Instagram ↗</a></p>
+              </div>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=38/1+Cooperative+Colony+Alwarpet+Chennai" target="_blank" rel="noopener" class="btn-primary" data-magnetic>
+            <span>Get Directions</span><span class="btn-arr">↗</span>
+          </a>
+        </div>
+        <div class="find-r" data-reveal>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.04!2d80.2502!3d13.0290!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzA0LjQiTiA4MMKwMTUnMDAuNyJF!5e0!3m2!1sen!2sin!4v1699999999!5m2!1sen!2sin"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="ra:tio map"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-word" data-parallax="0.25" aria-hidden="true">VISIT</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="ft-marquee" aria-hidden="true">
+        <div class="fm-t">
+          <span>ra:tio</span><b>×</b><span>specialty coffee</span><b>×</b><span>alwarpet</span><b>×</b>
+          <span>ra:tio</span><b>×</b><span>specialty coffee</span><b>×</b><span>alwarpet</span><b>×</b>
+        </div>
+      </div>
+      <div class="ft-top">
+        <div class="ft-brand">
+          <div class="ft-logo">ra:tio</div>
+          <p class="ft-tag">Every variable. Controlled.</p>
+        </div>
+        <div class="ft-links">
+          <a href="#craft" data-magnetic>Craft</a>
+          <a href="#menu" data-magnetic>Menu</a>
+          <a href="#space" data-magnetic>Space</a>
+          <a href="#find-us" data-magnetic>Visit</a>
+          <a href="https://www.instagram.com/at.ratio/" target="_blank" rel="noopener" data-magnetic>Instagram ↗</a>
+        </div>
+      </div>
+      <div class="ft-bottom">
+        <p>© 2025 ra:tio · No 38/1, Cooperative Colony, Sri Ram Nagar, Alwarpet, Chennai 600018</p>
+        <p>Rated 4.7 · Specialty Coffee Bar</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
